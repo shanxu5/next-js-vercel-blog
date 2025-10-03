@@ -9,7 +9,7 @@ const nextConfig = {
   //     },
   //   ];
   // },
-  basePath: '/blog',
+  // basePath: '/blog',
   images: {
     remotePatterns: [
       {

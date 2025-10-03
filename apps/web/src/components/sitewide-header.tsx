@@ -36,7 +36,7 @@ export function SiteHeader() {
           ))}
           <a
             className="font-medium text-muted-foreground text-sm transition-colors hover:text-primary"
-            href="/blog"
+            href={process.env.NEXT_PUBLIC_BLOG_URL}
           >
             Blog
           </a>
