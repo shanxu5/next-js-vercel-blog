@@ -14,19 +14,19 @@ export function BlogNavigation() {
           <div className="flex items-center gap-8">
             <a
               className="text-muted-foreground text-sm transition-colors hover:text-primary"
-              href={process.env.NEXT_PUBLIC_WEB_ABOUT_URL}
+              href={`${process.env.NEXT_PUBLIC_WEB_URL}/about`}
             >
               About
             </a>
             <a
               className="text-muted-foreground text-sm transition-colors hover:text-primary"
-              href={process.env.NEXT_PUBLIC_WEB_GALLERY_URL}
+              href={`${process.env.NEXT_PUBLIC_WEB_URL}/gallery`}
             >
               Gallery
             </a>
             <a
               className="text-muted-foreground text-sm transition-colors hover:text-primary"
-              href={process.env.NEXT_PUBLIC_WEB_CONTACT_URL}
+              href={`${process.env.NEXT_PUBLIC_WEB_URL}/contact`}
             >
               Contact Us
             </a>
