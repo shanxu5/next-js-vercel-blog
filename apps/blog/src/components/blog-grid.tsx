@@ -32,7 +32,7 @@ export async function BlogGrid({ category }: { category?: string }) {
             posts.map((post) => (
               <Link
                 className="group flex flex-col rounded-lg border border-border bg-card p-6 transition-all hover:border-primary/50"
-                href={`/blog/${post.slug}`}
+                href={`/${post.slug}`}
                 key={post.id}
               >
                 <div className="mb-4 flex items-center gap-2">
