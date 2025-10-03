@@ -5,6 +5,47 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await fetchPostBySlug(slug);
+  if (!post) {
+    notFound();
+  }
+
+  return {
+    title: `${post.title} | Blog`,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: new Date(post.publishedAt).toISOString(),
+      authors: ['Blog Team'],
+      tags: [post.category],
+      images: post.coverImage
+        ? [
+            {
+              url: post.coverImage,
+              width: 800,
+              height: 400,
+              alt: post.title,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: post.coverImage ? [post.coverImage] : [],
+    },
+  };
+}
+
 export default async function PostPage({
   params,
 }: {
