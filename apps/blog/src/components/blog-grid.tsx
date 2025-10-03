@@ -14,11 +14,19 @@ export async function BlogGrid({ category }: { category?: string }) {
   return (
     <section className="py-24 md:py-32">
       <div className="container mx-auto px-6">
-        {/* <div className="mb-12">
+        <div className="mb-12 flex items-center justify-between">
           <h2 className="font-normal font-serif text-3xl text-foreground md:text-4xl">
-            Posts
+            {category ? `${category} Posts` : 'All Posts'}
           </h2>
-        </div> */}
+          {category && (
+            <Link
+              className="group flex flex-col rounded-lg border border-border bg-card p-6 transition-all hover:border-primary/50"
+              href="/"
+            >
+              All Posts
+            </Link>
+          )}
+        </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.length > 0 ? (
             posts.map((post) => (
