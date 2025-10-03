@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Vercel Academy Foundation - Blog',
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`container mx-auto px-4 py-8 ${roboto.className}`}>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
