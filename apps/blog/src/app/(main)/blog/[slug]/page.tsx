@@ -58,7 +58,7 @@ export default async function PostPage({
   }
   return (
     <main className="flex flex-col gap-4">
-      <h1 className="font-bold text-4xl">Blog Post</h1>
+      {/* <h1 className="font-bold text-4xl">Blog Post</h1> */}
 
       <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
