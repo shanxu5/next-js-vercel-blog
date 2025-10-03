@@ -1,4 +1,4 @@
-import { fetchPostBySlug } from '@repo/api/blog';
+import { fetchPostBySlug, fetchPosts } from '@repo/api/blog';
 import { Button } from '@repo/ui/components/button';
 import { ArrowLeft, Badge, Calendar, Clock } from 'lucide-react';
 import Image from 'next/image';
@@ -44,6 +44,16 @@ export async function generateMetadata({
       images: post.coverImage ? [post.coverImage] : [],
     },
   };
+}
+
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const posts = await fetchPosts();
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export default async function PostPage({

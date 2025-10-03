@@ -26,9 +26,9 @@ export default async function Gallery() {
                   <Image
                     alt={item.title}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    height={500}
+                    fill
+                    sizes="(max-width: 768px) 100vw,(max-width: 1024px) 50vw,33vw"
                     src={item.imageUrl}
-                    width={500}
                   />
                   <div className="absolute inset-0 bg-background/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <div className="flex h-full items-center justify-center">
